@@ -2,7 +2,7 @@
   <artifact type="jar" name="randomProjectGenerator:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/randomProjectGenerator_jar</output-path>
     <root id="archive" name="randomProjectGenerator.jar">
-      <element id="artifact" artifact-name="randomProjectGenerator" />
+      <element id="module-output" name="randomProjectGenerator" />
     </root>
   </artifact>
 </component>
