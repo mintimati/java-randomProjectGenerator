@@ -4,43 +4,50 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-    public class Drums extends ArrayList {
+public class Drums {
 
-        protected Random rc = new Random();
+    private Random rc = new Random();
+    private String space;
+    private ArrayList<String> spaces = new ArrayList<>(List.of(
+            "Vacuum", "Room", "Large", "Space"));
+    private String texture;
+    private ArrayList<String> textures = new ArrayList<>(List.of(
+            "Deep", "Regular", "Dull"));
+    private Integer amount;
+    private Integer seed;
 
+    private ArrayList<String> restriction = null;
+    private ArrayList<String> restrictions = new ArrayList<>
+            (List.of("Just metals", "No four-on-floor kick",
+                    "Strictly house/techno",
+                    "Breakdown required", "Drop required",
+                    "LoFi"));
 
-        private ArrayList<String> drums() {
-        ArrayList<String> space = new ArrayList<>(List.of(
-                "Vacuum", "Room", "Large", "Space"));
-        ArrayList<String> texture = new ArrayList<>(List.of(
-                "Deep", "Regular", "Dull"));
-        Integer amount = rc.nextInt(1, 5);
-        Integer seed = rc.nextInt(1, 20);
+    /* the above code is a list of various characteristics
+     * that can be assigned to the drums - seed rolls a d20, if 15
+     * is rolled, a restriction will be added to the final object
+     */
 
-        ArrayList<String> restrictions = new ArrayList<>
-                (List.of("Just metals", "No four-on-floor kick",
-                        "Strictly house/techno",
-                        "Breakdown required", "Drop required",
-                        "LoFi"));
+    public Drums() {
+        this.amount = rc.nextInt(0, 5);
+        this.space = spaces.get(rc.nextInt(0, spaces.size()));
+        this.texture = textures.get(rc.nextInt(0, textures.size()));
+        this.seed = rc.nextInt(0, 20);
 
-            /* the above code is a list of various characteristics
-             * that can be assigned to the drums - seed rolls a d20, if 15
-             * is rolled, a restriction will be added to the final object
-             */
+        if (this.seed > 17) {
+            restriction.add(restrictions.get(rc.nextInt(0, restrictions.size())));
+        }
+    }
 
-        ArrayList<String> returnedDrums = new ArrayList<>(List.of(
-                amount.toString(),
-                space.get(rc.nextInt(0, space.size())),
-                texture.get(rc.nextInt(0, texture.size()))));
-
-        if(seed > 17) {
-            returnedDrums.add(restrictions.get(rc.nextInt(0, restrictions.size())));
+    public StringBuilder getResult() {
+        StringBuilder result = new StringBuilder(
+            String.format("%o pieces\nSpace: %s\nTexture: %s", this.amount, this.space,
+                    this.texture));
+        if(this.restriction != null) {
+            result.append(String.format("\n%s", this.restriction));
         }
 
-            /* the above code adds a randomised set of characteristics to a
-             * string arraylist, and returns it below.
-             */
-        return returnedDrums;
+        return result;
     }
 
 }

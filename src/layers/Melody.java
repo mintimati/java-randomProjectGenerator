@@ -6,8 +6,11 @@ import java.util.Random;
 
 public class Melody {
      protected Random rc = new Random();
-     String shape;
-     ArrayList<String> shapes =
+     public StringBuilder result = new StringBuilder();
+     private ArrayList<String> texture = new ArrayList<>();
+     private String shape;
+
+     private ArrayList<String> shapes =
              new ArrayList(List.of(
                      "Arpeggiated",
                      "Long note", "Staccato",
@@ -16,9 +19,7 @@ public class Melody {
                      "Happy", "Sad",
                      "Microtonal", "Nostalgic"
              ));
-
-     String[] texture = new String[1];
-     ArrayList<String> textures =
+     private ArrayList<String> textures =
              new ArrayList<>(List.of(
                      "Detuned", "Reverberated",
                      "Delayed", "Crystallic",
@@ -29,16 +30,21 @@ public class Melody {
      //the above are possible flavours
 
      //constructor
-     StringBuilder Melody() {
-          for(int i = 0; i < 1; i++) {
+     public Melody() {
+
+
+          for(int i = 0; i < 2; i++) {
                int pick = rc.nextInt(0, textures.size());
-               this.texture[i] = textures.get(pick);
-               textures.remove(pick);
+               this.texture.add(this.textures.get(pick));
+               this.textures.remove(pick);
           }
           //the above picks two textures at random
-          this.shape = shapes.get(rc.nextInt(0, shapes.size()));
+          this.shape = this.shapes.get(rc.nextInt(0, shapes.size()));
           //the above picks a random shape
-          return new StringBuilder(
-                 String.format("Shape: %s\nTextures: %s, %s", shape, texture[0], texture[1]));
+          this.result.append(String.format("Shape: %s\nTextures: %s, %s", shape, this.texture.get(0), this.texture.get(1)));
+     }
+
+     public StringBuilder getResult() {
+          return this.result;
      }
 }
