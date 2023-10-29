@@ -25,7 +25,8 @@ public class Melody {
                      "Delayed", "Crystallic",
                      "FM", "Growling",
                      "Soft/filtered", "Distorted",
-                     "Acid/Resonance", "Hollow"
+                     "Acid/Resonance", "Hollow",
+                     "Chorus/Flanger"
              ));
      //the above are possible flavours
 
