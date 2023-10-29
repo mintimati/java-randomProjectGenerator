@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e22da406-b7d2-4666-8a24-0eacf96550a0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/randomProjectGenerator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/randomProjectGenerator_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/layers/Instruments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layers/Drums.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/layers/Drums.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/RandProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/RandProject.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +41,10 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">

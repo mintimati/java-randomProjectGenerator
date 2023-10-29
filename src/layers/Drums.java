@@ -16,7 +16,7 @@ public class Drums {
     private Integer amount;
     private Integer seed;
 
-    private ArrayList<String> restriction = null;
+    private ArrayList<String> restriction = new ArrayList<>();
     private ArrayList<String> restrictions = new ArrayList<>
             (List.of("Just metals", "No four-on-floor kick",
                     "Strictly house/techno",
@@ -29,13 +29,19 @@ public class Drums {
      */
 
     public Drums() {
-        this.amount = rc.nextInt(0, 5);
+        this.amount = rc.nextInt(1, 6);
         this.space = spaces.get(rc.nextInt(0, spaces.size()));
         this.texture = textures.get(rc.nextInt(0, textures.size()));
         this.seed = rc.nextInt(0, 20);
 
-        if (this.seed > 17) {
+        if (this.seed > 8) {
             restriction.add(restrictions.get(rc.nextInt(0, restrictions.size())));
+        }
+        else if (this.seed > 15) {
+            restriction.add(restrictions.get(rc.nextInt(0, restrictions.size())));
+        }
+        else if (this.seed <= 8) {
+            this.restriction = null;
         }
     }
 
